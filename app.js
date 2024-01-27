@@ -11,7 +11,7 @@ app.use(express.json());
 // Routes
 app.use('/', ingredientsRoutes)
 app.use('/', herbalFormulasRoutes);
-app.use('/api/users', userRoutes);
+app.use('/', userRoutes);
 
 // Start server
 const PORT = process.env.PORT || 3000;

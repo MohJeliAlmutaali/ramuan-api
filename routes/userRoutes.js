@@ -2,12 +2,18 @@
 
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
-const verifyToken = require('../middlewares/authMiddleware');
+const { createUser, getUserById, updateUser, deleteUser,loginUser } = require('../controllers/userController');
 
-// Login user
-router.post('/login', userController.loginUser);
-// Mendefinisikan rute untuk mendapatkan informasi profil pengguna
-router.get('/profile', verifyToken, userController.getUserProfile);
+// Endpoint untuk membuat pengguna baru
+router.post('/api/users/register', createUser);
+// Endpoint untuk mendapatkan detail pengguna berdasarkan ID
+router.get('/api/users/:userId', getUserById);
+// Endpoint untuk memperbarui informasi pengguna
+router.put('/api/users/:userId/edit', updateUser);
+// Endpoint untuk menghapus pengguna
+router.delete('/api/users/:userId/delete', deleteUser);
+// Endpoint untuk login
+router.post('/api/users/login', loginUser);
+
 
 module.exports = router;
