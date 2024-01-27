@@ -88,7 +88,4 @@ const getHerbalFormulasByIngredient = (req, res) => {
     });
 };
 
-
-
-
 module.exports = { addIngredientToFormula, getIngredientsInFormula, deleteIngredientFromFormula, updateIngredientInFormula, getHerbalFormulasByIngredient };
